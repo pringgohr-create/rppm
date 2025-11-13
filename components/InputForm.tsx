@@ -10,7 +10,7 @@ interface InputFormProps {
 const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
   const [madrasahInfo, setMadrasahInfo] = useState<MadrasahInfo>({
     namaMadrasah: '',
-    namaGuru: 'HARMAJI', // Pre-filled as requested
+    namaGuru: '',
     mataPelajaran: '',
     fase: '',
     kelas: '',
@@ -87,9 +87,8 @@ const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => {
               name="namaGuru"
               value={madrasahInfo.namaGuru}
               onChange={handleInfoChange}
-              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-gray-100 cursor-not-allowed"
+              className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-primary focus:border-primary"
               required
-              readOnly
               disabled={isLoading}
             />
           </div>
